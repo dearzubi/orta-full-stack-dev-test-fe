@@ -26,14 +26,20 @@ const MainLayout = ({ children }) => {
 
   return (
     <div className="flex flex-col h-screen bg-background w-full">
-      <HeroNavbar isBordered>
+      <HeroNavbar
+        isBordered
+        className="w-full"
+        classNames={{
+          wrapper: "max-w-7xl ",
+        }}
+      >
         <NavbarBrand>
           <Link to={"/"}>
             <div className="flex items-center gap-2">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white p-1 rounded-md shadow-lg">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-1 rounded-md shadow-lg">
                 <Icon icon="fluent:shifts-team-24-filled" width={24} />
               </div>
-              <span className="font-semibold text-lg bg-gradient-to-r from-blue-600 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+              <span className="font-semibold text-lg bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 bg-clip-text text-transparent">
                 Orta Shift Manager
               </span>
             </div>
@@ -41,16 +47,26 @@ const MainLayout = ({ children }) => {
         </NavbarBrand>
         <NavbarContent justify="end">
           {user ? (
-            <Button
-              className="focus:outline-none hover:border-transparent bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-              size="sm"
-              variant="solid"
-              onPress={logout}
-            >
-              Logout
-            </Button>
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 text-sm text-foreground/70">
+                <Icon
+                  icon="lucide:user"
+                  className="text-orange-500"
+                  width={16}
+                />
+                <span className="font-medium">Welcome, {user.name}</span>
+              </div>
+              <Button
+                className="focus:outline-none hover:border-transparent bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+                size="sm"
+                variant="solid"
+                onPress={logout}
+              >
+                Logout
+              </Button>
+            </div>
           ) : (
-            <div className="flex items-center space-x-2 sm:space-x-4 w-full">
+            <div className="flex items-center gap-3">
               <Link
                 to="/login"
                 className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors px-3 py-1.5 rounded-md"
@@ -59,7 +75,7 @@ const MainLayout = ({ children }) => {
               </Link>
 
               <Button
-                className="focus:outline-none hover:border-transparent bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white shadow-lg hover:shadow-indigo-500/25 transition-all duration-300"
+                className="focus:outline-none hover:border-transparent bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
                 size="sm"
                 variant="solid"
                 onPress={() => navigate({ to: "/register" })}

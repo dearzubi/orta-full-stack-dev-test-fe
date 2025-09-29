@@ -20,7 +20,7 @@ function Login() {
   } = useLogin();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-50">
       <div className="flex flex-col lg:flex-row items-center bg-white rounded-xl shadow-lg p-8 max-w-6xl w-full">
         <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
           <img
@@ -31,16 +31,16 @@ function Login() {
         </div>
 
         <div className="w-full lg:w-1/2 px-4">
-          <h2 className="text-2xl font-bold text-blue-700 text-center mb-6">
+          <h2 className="text-2xl font-bold text-orange-700 text-center mb-6">
             Shift Manager Login
           </h2>
           {errorMessage && errorMessage.trim() !== "" && (
-            <div className="text-center border border-red-600 p-3 mb-4 rounded-md bg-red-100 text-red-700 shadow text-sm">
+            <div className="text-center border border-red-300 p-3 mb-4 rounded-lg bg-red-50 text-red-700 shadow-sm text-sm">
               {errorMessage}
             </div>
           )}
           {successMessage && successMessage.trim() !== "" && (
-            <div className="text-center border border-green-600 p-3 mb-4 rounded-md bg-green-100 text-green-700 shadow">
+            <div className="text-center border border-green-300 p-3 mb-4 rounded-lg bg-green-50 text-green-700 shadow-sm">
               {successMessage}
             </div>
           )}
@@ -53,7 +53,7 @@ function Login() {
               placeholder="Enter your email"
               variant="bordered"
               startContent={
-                <Icon icon="lucide:mail" className="text-default-400" />
+                <Icon icon="lucide:mail" className="text-orange-400" />
               }
               isDisabled={isLoggingIn}
               value={email}
@@ -70,7 +70,7 @@ function Login() {
               placeholder="Enter your password"
               variant="bordered"
               startContent={
-                <Icon icon="lucide:lock" className="text-default-400" />
+                <Icon icon="lucide:lock" className="text-orange-400" />
               }
               isDisabled={isLoggingIn}
               value={password}
@@ -82,7 +82,7 @@ function Login() {
 
             <Button
               type="submit"
-              className="w-full focus:outline-none hover:border-transparent bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+              className="w-full focus:outline-none hover:border-transparent bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 text-white shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
               size="lg"
               onPress={() => handleLogin()}
               isLoading={isLoggingIn}
@@ -95,7 +95,7 @@ function Login() {
               <p className="text-sm text-gray-600">
                 <button
                   onClick={() => navigate({ to: "/forgot-password" })}
-                  className="text-blue-600 hover:text-blue-800 font-medium underline"
+                  className="text-orange-600 hover:text-orange-800 font-medium underline hover:border-transparent focus:outline-none"
                 >
                   Forgot your password?
                 </button>
@@ -104,7 +104,7 @@ function Login() {
                 Don't have an account?{" "}
                 <button
                   onClick={() => navigate({ to: "/register" })}
-                  className="text-blue-600 hover:text-blue-800 font-medium underline"
+                  className="text-orange-600 hover:text-orange-800 font-medium underline hover:border-transparent focus:outline-none"
                 >
                   Register here
                 </button>
