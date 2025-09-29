@@ -5,6 +5,7 @@ This repository contains the frontend code for the ORTA Shift Manager applicatio
 ![Login Page](/assets/login.img.png)
 ![Login Page](/assets/shifts.img.png)
 ![Login Page](/assets/calendar.img.png)
+![Login Page](/assets/calendar-weekly.img.png)
 ![Login Page](/assets/create.img.png)
 ![Login Page](/assets/bulk-create.img.png)
 ![Login Page](/assets/details.img.png)
