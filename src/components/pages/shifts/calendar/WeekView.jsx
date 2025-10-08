@@ -27,7 +27,7 @@ export const WeekView = ({
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
       <div className="grid grid-cols-8 bg-gray-50 border-b border-gray-200">
         <div className="p-3 text-center text-sm font-semibold text-gray-700 border-r border-gray-200">
-          GMT+00
+          GMT+01
         </div>
 
         {calendarDays.map((dayData) => (
