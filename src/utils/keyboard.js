@@ -3,10 +3,7 @@
  * @returns {boolean} True if on macOS
  */
 export const isMacOS = () => {
-  return (
-    typeof navigator !== "undefined" &&
-    navigator.platform.toUpperCase().indexOf("MAC") >= 0
-  );
+  return navigator.userAgent.includes("Mac");
 };
 
 /**
